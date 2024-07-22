@@ -1,0 +1,188 @@
+/* Basic styling for the entire body */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #ffeb3b; /* Yellow background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Hide scroll bars */
+}
+
+/* Styling for the main container */
+.container {
+    background-color: #fff; /* White background */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    width: 400px; /* Fixed width */
+    height: 80vh; /* 80% of viewport height */
+    max-height: 80vh; /* Maximum height */
+    overflow: auto; /* Scroll if content overflows */
+    text-align: center; /* Center text */
+    background: #ffeb3b; /* Yellow background for container */
+}
+
+/* Styling for the header */
+h1 {
+    margin: 0 0 20px 0; /* Margin below the header */
+}
+
+/* Layout for the input fields and button */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Space below the input container */
+}
+
+/* Styling for the input fields */
+.input-container input {
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    width: calc(50% - 15px); /* Half width minus margin */
+    margin-right: 10px; /* Space between inputs */
+}
+
+/* Styling for the "Add Task" button */
+#add-task-button {
+    padding: 10px; /* Padding inside the button */
+    border: none; /* Remove border */
+    background-color: #5cb85c; /* Green background */
+    color: white; /* White text */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Button hover effect */
+#add-task-button:hover {
+    background-color: #4cae4c; /* Darker green on hover */
+}
+
+/* Styling for the task list */
+ul {
+    list-style: none; /* Remove list bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    overflow-y: auto; /* Vertical scroll if needed */
+    max-height: calc(80vh - 80px); /* Adjust height based on container size */
+}
+
+/* Styling for each task item */
+li {
+    background: #ffeb3b; /* Yellow background for task */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px; /* Padding inside the task */
+    margin-bottom: 10px; /* Space between tasks */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    position: relative; /* Positioning context */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transitions */
+}
+
+/* Styling for completed tasks */
+li.completed {
+    text-decoration: line-through; /* Strike-through text */
+    color: #888; /* Grey text */
+}
+
+/* Layout for the task content */
+li .task-container {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Full width */
+}
+
+/* Styling for the task number */
+li .task-number {
+    font-weight: bold; /* Bold font */
+    margin-right: 10px; /* Space between number and text */
+    font-size: 16px; /* Font size for task number */
+    color: #333; /* Dark text color */
+}
+
+/* Styling for the task text */
+li .task-text {
+    flex: 1; /* Flex to take remaining space */
+}
+
+/* Styling for the delete button */
+li button {
+    background-color: #d9534f; /* Red background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 5px 10px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    align-self: flex-end; /* Align to the end */
+    margin-top: 10px; /* Space above the button */
+    font-size: 16px; /* Font size for text */
+    display: inline-block;
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Button hover effect */
+li button:hover {
+    background-color: #c9302c; /* Darker red on hover */
+}
+
+/* Styling for Font Awesome icons in the button */
+li button i {
+    font-size: 16px; /* Icon font size */
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Styling for the time and date display */
+.time-date {
+    font-size: 12px; /* Font size for time and date */
+    color: #555; /* Dark grey text */
+    margin-top: 10px; /* Space above the time/date */
+    align-self: flex-end; /* Align to the end */
+}
+
+/* Custom checkbox styling */
+.custom-checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px; /* Font size for checkbox */
+    margin-right: 10px; /* Space between checkbox and text */
+}
+
+.custom-checkbox input[type="checkbox"] {
+    display: none; /* Hide default checkbox */
+}
+
+.custom-checkbox span {
+    width: 20px; /* Width of the custom checkbox */
+    height: 20px; /* Height of the custom checkbox */
+    background-color: #fff; /* White background */
+    border: 2px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block;
+    position: relative; /* Positioning context */
+}
+
+/* Checkbox checked state */
+.custom-checkbox input[type="checkbox"]:checked + span::after {
+    content: ''; /* Empty content */
+    position: absolute;
+    top: 3px; /* Position inside checkbox */
+    left: 3px; /* Position inside checkbox */
+    width: 10px; /* Width of the checkmark */
+    height: 10px; /* Height of the checkmark */
+    background-color: #5cb85c; /* Green checkmark */
+    border-radius: 3px; /* Rounded corners for checkmark */
+}
+
+/* Fade-out effect for deleted tasks */
+li.fade-out {
+    opacity: 0; /* Make item invisible */
+    transform: translateY(-20px); /* Move item up */
+}
